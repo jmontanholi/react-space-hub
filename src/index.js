@@ -8,6 +8,7 @@ import {
 import './index.css';
 import NavBar from './components/navBar';
 import MyProfile from './components/myProfile';
+import RocketsPage from './components/rockets';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,6 +17,9 @@ ReactDOM.render(
       <Switch>
         <Route path="/profile">
           <MyProfile />
+        </Route>
+        <Route path="/">
+          <RocketsPage />
         </Route>
       </Switch>
     </ReactRouter>
