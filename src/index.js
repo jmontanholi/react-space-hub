@@ -11,6 +11,7 @@ import './index.css';
 import NavBar from './components/navBar';
 import MyProfile from './components/myProfile';
 import RocketsPage from './components/rockets';
+import MissionsPage from './components/MissionsPage';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,11 +19,14 @@ ReactDOM.render(
       <ReactRouter>
         <NavBar />
         <Switch>
+          <Route path="/" exact>
+            <RocketsPage />
+          </Route>
+          <Route path="/missions">
+            <MissionsPage />
+          </Route>
           <Route path="/profile">
             <MyProfile />
-          </Route>
-          <Route path="/">
-            <RocketsPage />
           </Route>
         </Switch>
       </ReactRouter>
