@@ -19,7 +19,7 @@ const NavBar = () => {
       </div>
       <div className={style.linkDiv}>
         <NavLink className={style.link} exact activeClassName={style.selected} to="/">Rockets</NavLink>
-        <NavLink className={style.link} exact activeClassName={style.selected} to="/missions">Missions</NavLink>
+        <NavLink className={style.link} activeClassName={style.selected} to="/missions">Missions</NavLink>
         <NavLink className={`${style.link} ${style.profile}`} exact activeClassName={style.selected} to="/profile">My Profile</NavLink>
       </div>
     </nav>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Missions = () => (
+const MissionsPage = () => (
   <div className="mission__container">
     <table>
       <tr>
@@ -13,4 +13,4 @@ const Missions = () => (
   </div>
 );
 
-export default Missions;
+export default MissionsPage;
