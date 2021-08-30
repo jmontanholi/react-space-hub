@@ -14,7 +14,7 @@
 }
 
 .img {
-  margin:0 2rem 0 2rem;
+  margin: 0 2rem 0 2rem;
   width: 80px;
   height: 80px;
 }
@@ -24,10 +24,16 @@
 }
 
 .link {
+  color: rgb(20, 20, 20);
   margin: 0 1rem 0 1rem;
+  text-decoration: none;
 }
 
 .profile {
   border-left: 2px solid #a7a7a7;
   padding-left: 15px;
+}
+
+.selected {
+  text-decoration: underline;
 }
