@@ -24,10 +24,16 @@
 }
 
 .link {
+  color: rgb(20, 20, 20);
   margin: 0 1rem 0 1rem;
+  text-decoration: none;
 }
 
 .profile {
   border-left: 2px solid #a7a7a7;
   padding-left: 15px;
+}
+
+.selected {
+  text-decoration: underline;
 }
