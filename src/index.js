@@ -5,6 +5,8 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/createStore';
 import './index.css';
 import NavBar from './components/navBar';
 import MyProfile from './components/myProfile';
@@ -12,17 +14,19 @@ import RocketsPage from './components/rockets';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ReactRouter>
-      <NavBar />
-      <Switch>
-        <Route path="/profile">
-          <MyProfile />
-        </Route>
-        <Route path="/">
-          <RocketsPage />
-        </Route>
-      </Switch>
-    </ReactRouter>
+    <Provider store={store}>
+      <ReactRouter>
+        <NavBar />
+        <Switch>
+          <Route path="/profile">
+            <MyProfile />
+          </Route>
+          <Route path="/">
+            <RocketsPage />
+          </Route>
+        </Switch>
+      </ReactRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
