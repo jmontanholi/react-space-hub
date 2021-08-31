@@ -23,7 +23,12 @@ const MissionsPage = () => {
         </thead>
         <tbody>
           {missions.map((mission) => (
-            <Mission key={mission.id} name={mission.name} description={mission.description} />
+            <Mission
+              key={mission.id}
+              id={mission.id}
+              name={mission.name}
+              description={mission.description}
+            />
           ))}
         </tbody>
       </table>
