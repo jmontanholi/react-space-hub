@@ -1,0 +1,50 @@
+.div {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.title {
+  align-self: center;
+}
+
+.ul {
+  padding: 0;
+  list-style: none;
+}
+
+.li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e8e8e8;
+  height: 80px;
+}
+
+.missionsDiv,
+.rocketsDiv {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 0 2rem 0 2rem;
+}
+
+.missionsTitle,
+.rocketsTitle {
+  align-self: center;
+  margin-bottom: 2rem;
+}
+
+.rocketName {
+  margin-left: 2rem;
+}
+
+.rocketBtn {
+  margin-right: 2rem;
+}
