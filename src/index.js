@@ -19,14 +19,14 @@ ReactDOM.render(
       <ReactRouter>
         <NavBar />
         <Switch>
-          <Route path="/" exact>
-            <RocketsPage />
-          </Route>
           <Route path="/missions">
             <MissionsPage />
           </Route>
           <Route path="/profile">
             <MyProfile />
+          </Route>
+          <Route path="/" exact>
+            <RocketsPage />
           </Route>
         </Switch>
       </ReactRouter>
