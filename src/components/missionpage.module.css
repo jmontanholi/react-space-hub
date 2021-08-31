@@ -1,15 +1,18 @@
 .table {
-  width: 95%;
+  width: 91%;
   margin-inline: auto;
   border-collapse: collapse;
-}
-
-.row:nth-child(even) {
-  background-color: #ddd;
+  margin-bottom: 2rem;
 }
 
 .column {
   border: 1px solid #ddd;
   text-align: left;
-  padding: 8px;
+  padding: 10px;
+  padding-bottom: 1.8rem;
+}
+
+.head {
+  font-size: 1.3rem;
+  padding-bottom: 10px;
 }
