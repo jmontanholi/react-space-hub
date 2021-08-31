@@ -6,6 +6,7 @@ import { unbookRocket } from '../redux/rockets/rockets';
 
 const MyProfile = () => {
   const rockets = useSelector((state) => state.rockets.rockets);
+  const filtered = rockets.filter((rocket) => rocket.reserved === true);
   const dispatch = useDispatch();
 
   return (
@@ -18,18 +19,13 @@ const MyProfile = () => {
           <h3 className={style.rocketsTitle}>Rockets Reserved</h3>
           <ul className={style.ul}>
             {
-              rockets.map((rocket) => {
-                if (rocket.reserved) {
-                  return (
-                    <li className={style.li} key={rocket.id}>
-                      <h3 className={style.rocketName}>{rocket.name}</h3>
-                      { rocket.reserved
-                      && <Button variant="outline-secondary" className={style.rocketBtn} onClick={() => { dispatch(unbookRocket(rocket.id)); }}>Cancel reservation</Button>}
-                    </li>
-                  );
-                }
-                return false;
-              })
+              filtered.map((rocket) => (
+                <li className={style.li} key={rocket.id}>
+                  <h3 className={style.rocketName}>{rocket.name}</h3>
+                  { rocket.reserved
+                  && <Button variant="outline-secondary" className={style.rocketBtn} onClick={() => { dispatch(unbookRocket(rocket.id)); }}>Cancel reservation</Button>}
+                </li>
+              ))
             }
           </ul>
         </div>
