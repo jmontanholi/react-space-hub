@@ -13,6 +13,7 @@ const populateRockets = (data) => {
       id: data[i].id,
       name: data[i].rocket_name,
       type: data[i].rocket_type,
+      description: data[i].description,
       flickr_images: data[i].flickr_images,
     });
   }
