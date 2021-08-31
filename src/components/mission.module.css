@@ -1,0 +1,53 @@
+.row:nth-child(odd) {
+    background-color: #F2F2F2;
+}
+
+.column {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 10px;
+    padding-bottom: 1.8rem;
+}
+
+.name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.dsc {
+    color: #474A4E;
+}
+
+.columnbutton {
+    padding: 0 3rem;
+}
+
+.columnstatus {
+    padding: 0 1rem;
+}
+
+.status {
+    color: #fff;
+    background: #6D757D;
+    font-weight: bold;
+    min-width: 116px;
+    padding: 1px 6px 0 6px;
+    line-height: 22px;
+    border-radius: 6px;
+}
+
+.button {
+    font-size: 1.3rem;
+    background: transparent;
+    border-radius: 5px;
+    min-width: 135px;
+    line-height: 40px;
+    border-color: #444A4F;
+    color: #444A4F;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #ddd;
+}
