@@ -10,7 +10,7 @@ import store from './redux/createStore';
 import './index.css';
 import NavBar from './components/navBar';
 import MyProfile from './components/myProfile';
-import RocketsPage from './components/rockets';
+import RocketsPage from './components/rocketsPage';
 import MissionsPage from './components/MissionsPage';
 
 ReactDOM.render(

@@ -1,0 +1,29 @@
+.ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.li {
+  display: flex;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+img {
+  max-width: 350px;
+  margin-right: 2rem;
+}
+
+.textDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.description {
+  font-size: 2rem;
+}
