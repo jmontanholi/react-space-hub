@@ -7,7 +7,7 @@ const useMission = () => {
 
   useEffect(() => {
     dispatch(getMissions());
-  }, []);
+  }, [dispatch]);
 };
 
 export default useMission;
