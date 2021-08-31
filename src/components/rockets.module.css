@@ -25,5 +25,5 @@ img {
 }
 
 .description {
-  font-size: clamp(0.7rem, 1.5vw, 2.5rem);
+  font-size: 2rem;
 }
