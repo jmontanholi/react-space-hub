@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './mission.module.css';
+import style from './missionpage.module.css';
 
 const MissionsPage = () => (
   <div className="mission__container">
