@@ -12,7 +12,12 @@ const Mission = ({
     <tr className={style.row}>
       <td className={`${style.column} ${style.name}`}>{name}</td>
       <td className={`${style.column} ${style.dsc}`}>{description}</td>
-      <td className={`${style.column} ${style.columnstatus}`}><p className={style.status}>NOT A MEMBER</p></td>
+      <td className={`${style.column} ${style.columnstatus}`}>
+        {reserved
+        && <p className={style.statusActive}>Active Member</p>}
+        {!reserved
+        && <p className={style.status}>NOT A MEMBER</p>}
+      </td>
       <td className={`${style.column} ${style.columnbutton}`}>
         {reserved
         && (
