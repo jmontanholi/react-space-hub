@@ -25,7 +25,7 @@ ReactDOM.render(
           <Route path="/profile">
             <MyProfile />
           </Route>
-          <Route path="/" exact>
+          <Route path="/">
             <RocketsPage />
           </Route>
         </Switch>
