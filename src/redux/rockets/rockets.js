@@ -46,7 +46,6 @@ const reducer = (state = initialState, action) => {
     case GET_ROCKETS_ERR:
       return { ...state, loading: false, error: action.error };
     case BOOK_ROCKET:
-      console.log(bookedRocket(state.rockets, action.payload));
       return { ...state, rockets: bookedRocket(state.rockets, action.payload) };
     default:
       return state;
