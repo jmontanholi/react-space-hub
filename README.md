@@ -1,59 +1,61 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# React-Redux Space Traveler's Hub
 
-> One paragraph statement about the project.
+[Video explanation of the project](https://www.loom.com/share/122ae77b47b3453797d7a9772346b447)
 
-![screenshot](./app_screenshot.png)
+> A web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
-Additional description about the project and its features.
+![screenshot](./printscreen.png)
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- React
+- Redux
+- Git & GitHub
+- VScode
+- React Bootstrap
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://keen-meitner-7781f8.netlify.app)
 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- GitHub account
+- Git
+- Browser
+- Commandline
 ### Setup
+
+- To setup this repository locally please open your commandline.
+- Navigate to where you want to clone the repository
+- Use this command to clone it `git clone git@github.com:jmontanholi/react-space-hub.git`
+- Then `cd react-space-hub`
 
 ### Install
 
+- To install it just use the commandline and this command `npm install` or `npm i` or `yarn install`
 ### Usage
 
-### Run tests
-
-### Deployment
-
-
+- To open it locally on your browser just use this command in the commandline `npm start` or `yarn start`
 
 ## Authors
 
-👤 **Author1**
+👤 **Alex Arturo Guzman Cruz**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@ArthurGC](https://github.com/ArthurGC)
 
-👤 **Author2**
+👤 **João Vítor Montanholi Nunes**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [jmontanholi](https://github.com/jmontanholi)
+- Twitter: [MontanholiNunes](https://twitter.com/MontanholiNunes)
+- LinkedIn: [Joao vitor montanholi](https://www.linkedin.com/in/joaovitormontanholi/)
 
 ## 🤝 Contributing
 
@@ -67,9 +69,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse
 
 ## 📝 License
 
