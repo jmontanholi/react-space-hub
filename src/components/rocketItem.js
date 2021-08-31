@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import style from './rockets.module.css';
-import { bookRocket } from '../redux/rockets/rockets';
+import { bookRocket, unbookRocket } from '../redux/rockets/rockets';
 
 const RocketItem = () => {
   const rockets = useSelector((state) => state.rockets.rockets);
@@ -22,7 +22,10 @@ const RocketItem = () => {
               <p className={style.description}>
                 {rocket.description}
               </p>
-              <Button variant="primary" onClick={() => { dispatch(bookRocket(rocket.id)); }}>Reserve Rocket</Button>
+              { rocket.reserved
+              && <Button variant="outline-secondary" onClick={() => { dispatch(unbookRocket(rocket.id)); }}>Cancel reservation</Button>}
+              { !rocket.reserved
+              && <Button variant="primary" onClick={() => { dispatch(bookRocket(rocket.id)); }}>Reserve Rocket</Button>}
             </div>
           </li>
         ))

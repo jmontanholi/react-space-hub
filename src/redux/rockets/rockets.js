@@ -1,6 +1,7 @@
 import { GET_ROCKETS, GET_ROCKETS_SUCCESS, GET_ROCKETS_ERR } from '../slices/rocketsSlice';
 
 const BOOK_ROCKET = 'SpaceHub/Rockets/BOOK_ROCKET';
+const UNBOOK_ROCKET = 'SpaceHub/Rockets/UNBOOK_ROCKET';
 
 const initialState = {
   rockets: [],
@@ -10,6 +11,11 @@ const initialState = {
 
 const bookRocket = (payload) => ({
   type: BOOK_ROCKET,
+  payload,
+});
+
+const unbookRocket = (payload) => ({
+  type: UNBOOK_ROCKET,
   payload,
 });
 
@@ -37,6 +43,16 @@ const bookedRocket = (state, id) => {
   return newState;
 };
 
+const unbookedRocket = (state, id) => {
+  const newState = state.map((rocket) => {
+    if (rocket.id !== id) {
+      return rocket;
+    }
+    return { ...rocket, reserved: false };
+  });
+  return newState;
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ROCKETS:
@@ -46,11 +62,12 @@ const reducer = (state = initialState, action) => {
     case GET_ROCKETS_ERR:
       return { ...state, loading: false, error: action.error };
     case BOOK_ROCKET:
-      console.log(bookedRocket(state.rockets, action.payload));
       return { ...state, rockets: bookedRocket(state.rockets, action.payload) };
+    case UNBOOK_ROCKET:
+      return { ...state, rockets: unbookedRocket(state.rockets, action.payload) };
     default:
       return state;
   }
 };
 
-export { reducer as default, bookRocket };
+export { reducer as default, bookRocket, unbookRocket };
