@@ -1,5 +1,5 @@
 import {
-  GET_MISSIONS, GET_MISSIONS_ERR, GET_MISSIONS_SUCCESS, RESERVED_MISSION,
+  GET_MISSIONS, GET_MISSIONS_ERR, GET_MISSIONS_SUCCESS, RESERVED_MISSION, UNRESERVED_MISSION,
 } from '../slices/missionSlice';
 
 const initialState = {
@@ -16,6 +16,7 @@ const populateMissions = (data) => {
       id: data[i].mission_id,
       name: data[i].mission_name,
       description: data[i].description,
+      reserved: false,
     });
   }
   return arr;
@@ -28,12 +29,29 @@ export const reserveMission = (payload) => (
   }
 );
 
+export const unreserveMission = (payload) => (
+  {
+    type: UNRESERVED_MISSION,
+    payload,
+  }
+);
+
 const reservedMission = (state, id) => {
   const newState = state.map((mission) => {
     if (mission.id !== id) {
       return mission;
     }
     return { ...mission, reserved: true };
+  });
+  return newState;
+};
+
+const unreservedMission = (state, id) => {
+  const newState = state.map((mission) => {
+    if (mission.id !== id) {
+      return mission;
+    }
+    return { ...mission, reserved: false };
   });
   return newState;
 };
@@ -54,6 +72,8 @@ const reducer = (state = initialState, action) => {
       return { ...state, loading: false, error: action.error };
     case RESERVED_MISSION:
       return { ...state, missions: reservedMission(state.missions, action.payload) };
+    case UNRESERVED_MISSION:
+      return { ...state, missions: unreservedMission(state.missions, action.payload) };
     default:
       return state;
   }
