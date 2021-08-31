@@ -5,9 +5,11 @@ import { NavLink } from 'react-router-dom';
 import logo from '../planet.png';
 import style from './navBar.module.css';
 import getRockets from '../redux/slices/rocketsSlice';
+import useMission from '../redux/hooks/useMission';
 
 const NavBar = () => {
   const dispatch = useDispatch();
+  useMission();
   useEffect(() => {
     dispatch(getRockets());
   }, []);
@@ -18,9 +20,9 @@ const NavBar = () => {
         <h1 className={style.title}>Space Traveler's Hub</h1>
       </div>
       <div className={style.linkDiv}>
-        <NavLink className={style.link} activeClassName={style.selected} to="/">Rockets</NavLink>
-        <NavLink className={style.link} activeClassName={style.selected} to="/missions">Missions</NavLink>
-        <NavLink className={`${style.link} ${style.profile}`} activeClassName={style.selected} to="/profile">My Profile</NavLink>
+        <NavLink className={style.link} exact activeClassName={style.selected} to="/">Rockets</NavLink>
+        <NavLink className={style.link} exact activeClassName={style.selected} to="/missions">Missions</NavLink>
+        <NavLink className={`${style.link} ${style.profile}`} exact activeClassName={style.selected} to="/profile">My Profile</NavLink>
       </div>
     </nav>
   );
