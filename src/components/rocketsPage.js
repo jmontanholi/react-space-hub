@@ -1,8 +1,9 @@
 import React from 'react';
 import RocketItem from './rocketItem';
+import style from './rocketsPage.module.css';
 
 const RocketsPage = () => (
-  <div>
+  <div className={style.div}>
     <RocketItem />
   </div>
 );
