@@ -1,4 +1,6 @@
-import { GET_MISSIONS, GET_MISSIONS_ERR, GET_MISSIONS_SUCCESS } from '../slices/missionSlice';
+import {
+  GET_MISSIONS, GET_MISSIONS_ERR, GET_MISSIONS_SUCCESS, RESERVED_MISSION,
+} from '../slices/missionSlice';
 
 const initialState = {
   missions: [],
@@ -19,6 +21,13 @@ const populateMissions = (data) => {
   return arr;
 };
 
+export const reservedMission = (payload) => (
+  {
+    type: RESERVED_MISSION,
+    payload,
+  }
+);
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_MISSIONS:
@@ -33,6 +42,8 @@ const reducer = (state = initialState, action) => {
       };
     case GET_MISSIONS_ERR:
       return { ...state, loading: false, error: action.error };
+    case RESERVED_MISSION:
+      return { ...state };
     default:
       return state;
   }
