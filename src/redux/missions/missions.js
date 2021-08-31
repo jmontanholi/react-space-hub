@@ -1,7 +1,7 @@
 import { GET_MISSIONS, GET_MISSIONS_ERR, GET_MISSIONS_SUCCESS } from '../slices/missionSlice';
 
 const initialState = {
-  rockets: [],
+  missions: [],
   loading: false,
   error: null,
 };
