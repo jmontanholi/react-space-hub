@@ -27,3 +27,8 @@ img {
 .description {
   font-size: 2rem;
 }
+
+.badge {
+  font-size: 1rem;
+  margin: 0 1rem 1rem;
+}
