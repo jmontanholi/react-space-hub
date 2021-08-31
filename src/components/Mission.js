@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import style from './mission.module.css';
-import { reserveMission } from '../redux/missions/missions';
+import { reserveMission, unreserveMission } from '../redux/missions/missions';
 
-const Mission = ({ id, name, description }) => {
+const Mission = ({
+  id, name, description, reserved,
+}) => {
   const dispatch = useDispatch();
   return (
     <tr className={style.row}>
@@ -12,6 +14,18 @@ const Mission = ({ id, name, description }) => {
       <td className={`${style.column} ${style.dsc}`}>{description}</td>
       <td className={`${style.column} ${style.columnstatus}`}><p className={style.status}>NOT A MEMBER</p></td>
       <td className={`${style.column} ${style.columnbutton}`}>
+        {reserved
+        && (
+        <button
+          type="button"
+          className={style.button}
+          onClick={() => dispatch(unreserveMission(id))}
+        >
+          Leave Mission
+        </button>
+        )}
+        {!reserved
+        && (
         <button
           type="button"
           className={style.button}
@@ -19,6 +33,7 @@ const Mission = ({ id, name, description }) => {
         >
           Join Mission
         </button>
+        )}
       </td>
     </tr>
   );
@@ -28,6 +43,7 @@ Mission.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
 
 export default Mission;
