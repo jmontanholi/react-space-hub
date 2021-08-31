@@ -18,9 +18,9 @@ const NavBar = () => {
         <h1 className={style.title}>Space Traveler's Hub</h1>
       </div>
       <div className={style.linkDiv}>
-        <NavLink className={style.link} exact activeClassName={style.selected} to="/">Rockets</NavLink>
-        <NavLink className={style.link} exact activeClassName={style.selected} to="/missions">Missions</NavLink>
-        <NavLink className={`${style.link} ${style.profile}`} exact activeClassName={style.selected} to="/profile">My Profile</NavLink>
+        <NavLink className={style.link} activeClassName={style.selected} to="/">Rockets</NavLink>
+        <NavLink className={style.link} activeClassName={style.selected} to="/missions">Missions</NavLink>
+        <NavLink className={`${style.link} ${style.profile}`} activeClassName={style.selected} to="/profile">My Profile</NavLink>
       </div>
     </nav>
   );
