@@ -7,6 +7,7 @@ import { reserveMission, unreserveMission } from '../redux/missions/missions';
 const Mission = ({
   id, name, description, reserved,
 }) => {
+
   const dispatch = useDispatch();
   return (
     <tr className={style.row}>
