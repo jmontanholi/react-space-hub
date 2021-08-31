@@ -18,7 +18,7 @@ const Mission = ({
         && (
         <button
           type="button"
-          className={style.button}
+          className={style.buttonLeave}
           onClick={() => dispatch(unreserveMission(id))}
         >
           Leave Mission
