@@ -2,6 +2,8 @@
 
 # React-Redux Space Traveler's Hub
 
+[Video explanation of the project](https://www.loom.com/share/122ae77b47b3453797d7a9772346b447)
+
 > A web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
 ![screenshot](./printscreen.png)
