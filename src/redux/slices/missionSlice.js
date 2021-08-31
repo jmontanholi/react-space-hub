@@ -7,7 +7,7 @@ const getMissions = () => async (dispatch) => {
   dispatch({ type: GET_MISSIONS });
   const response = await fetch(appUrl);
   const data = await response.json();
-  return dispatch({ type: GET_MISSIONS_SUCCESS, data });
+  return dispatch({ type: GET_MISSIONS_SUCCESS, data, status: 'fetched' });
 };
 
 export {

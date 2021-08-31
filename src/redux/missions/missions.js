@@ -2,6 +2,7 @@ import { GET_MISSIONS, GET_MISSIONS_ERR, GET_MISSIONS_SUCCESS } from '../slices/
 
 const initialState = {
   missions: [],
+  status: 'fetching',
   loading: false,
   error: null,
 };
@@ -24,7 +25,12 @@ const reducer = (state = initialState, action) => {
       return { ...state, loading: true };
     case GET_MISSIONS_SUCCESS:
       populateMissions(action.data);
-      return { ...state, loading: false, missions: populateMissions(action.data) };
+      return {
+        ...state,
+        loading: false,
+        missions: populateMissions(action.data),
+        status: action.status,
+      };
     case GET_MISSIONS_ERR:
       return { ...state, loading: false, error: action.error };
     default:

@@ -5,11 +5,9 @@ import { NavLink } from 'react-router-dom';
 import logo from '../planet.png';
 import style from './navBar.module.css';
 import getRockets from '../redux/slices/rocketsSlice';
-import useMission from '../redux/hooks/useMission';
 
 const NavBar = () => {
   const dispatch = useDispatch();
-  useMission();
   useEffect(() => {
     dispatch(getRockets());
   }, []);

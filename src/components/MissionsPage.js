@@ -2,9 +2,13 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Mission from './Mission';
 import style from './missionpage.module.css';
+import useMission from '../redux/hooks/useMission';
 
 const MissionsPage = () => {
-  const missions = useSelector((state) => state.missions.missions);
+  const { missions } = useSelector((state) => state.missions);
+  const { status } = useSelector((state) => state.missions);
+
+  useMission(status);
 
   return (
     <div className="mission__container">
