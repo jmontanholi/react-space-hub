@@ -1,15 +1,53 @@
-.table {
-  width: 95%;
-  margin-inline: auto;
-  border-collapse: collapse;
-}
-
-.row:nth-child(even) {
-  background-color: #ddd;
+.row:nth-child(odd) {
+  background-color: #f2f2f2;
 }
 
 .column {
   border: 1px solid #ddd;
   text-align: left;
-  padding: 8px;
+  padding: 10px;
+  padding-bottom: 1.8rem;
+}
+
+.name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.dsc {
+  color: #474a4e;
+}
+
+.columnbutton {
+  padding: 0 3rem;
+}
+
+.columnstatus {
+  padding: 0 1rem;
+}
+
+.status {
+  color: #fff;
+  background: #6d757d;
+  font-weight: bold;
+  min-width: 116px;
+  padding: 1px 6px 0 6px;
+  line-height: 22px;
+  border-radius: 6px;
+}
+
+.button {
+  font-size: 1.3rem;
+  background: transparent;
+  border-radius: 5px;
+  min-width: 135px;
+  line-height: 40px;
+  border-color: #444a4f;
+  color: #444a4f;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #ddd;
 }
