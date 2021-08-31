@@ -1,10 +1,17 @@
 import { GET_ROCKETS, GET_ROCKETS_SUCCESS, GET_ROCKETS_ERR } from '../slices/rocketsSlice';
 
+const BOOK_ROCKET = 'SpaceHub/Rockets/BOOK_ROCKET';
+
 const initialState = {
   rockets: [],
   loading: false,
   error: null,
 };
+
+const bookRocket = (payload) => ({
+  type: BOOK_ROCKET,
+  payload,
+});
 
 const populateRockets = (data) => {
   const arr = [];
@@ -20,18 +27,30 @@ const populateRockets = (data) => {
   return arr;
 };
 
+const bookedRocket = (state, id) => {
+  const newState = state.map((rocket) => {
+    if (rocket.id !== id) {
+      return rocket;
+    }
+    return { ...rocket, reserved: true };
+  });
+  return newState;
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ROCKETS:
       return { ...state, loading: true };
     case GET_ROCKETS_SUCCESS:
-      populateRockets(action.data);
       return { ...state, loading: false, rockets: populateRockets(action.data) };
     case GET_ROCKETS_ERR:
       return { ...state, loading: false, error: action.error };
+    case BOOK_ROCKET:
+      console.log(bookedRocket(state.rockets, action.payload));
+      return { ...state, rockets: bookedRocket(state.rockets, action.payload) };
     default:
       return state;
   }
 };
 
-export default reducer;
+export { reducer as default, bookRocket };
