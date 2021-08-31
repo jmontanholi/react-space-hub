@@ -7,6 +7,8 @@ import { unbookRocket } from '../redux/rockets/rockets';
 const MyProfile = () => {
   const rockets = useSelector((state) => state.rockets.rockets);
   const filtered = rockets.filter((rocket) => rocket.reserved === true);
+  const missions = useSelector((state) => state.missions.missions);
+  const missionsFiltered = missions.filter((mission) => mission.reserved === true);
   const dispatch = useDispatch();
 
   return (
