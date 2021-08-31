@@ -21,12 +21,22 @@ const populateMissions = (data) => {
   return arr;
 };
 
-export const reservedMission = (payload) => (
+export const reserveMission = (payload) => (
   {
     type: RESERVED_MISSION,
     payload,
   }
 );
+
+const reservedMission = (state, id) => {
+  const newState = state.map((mission) => {
+    if (mission.id !== id) {
+      return mission;
+    }
+    return { ...mission, reserved: true };
+  });
+  return newState;
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -43,7 +53,7 @@ const reducer = (state = initialState, action) => {
     case GET_MISSIONS_ERR:
       return { ...state, loading: false, error: action.error };
     case RESERVED_MISSION:
-      return { ...state };
+      return { ...state, missions: reservedMission(state.missions, action.payload) };
     default:
       return state;
   }
