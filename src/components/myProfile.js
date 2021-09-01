@@ -25,10 +25,13 @@ const MyProfile = () => {
             {missionsFiltered.map((mission) => (
               <li className={style.li} key={mission.id}>
                 <h3 className={style.rocketName}>{mission.name}</h3>
-                { mission.reserved
-                  && <Button variant="outline-secondary" className={style.rocketBtn} onClick={() => { dispatch(unreserveMission(mission.id)); }}>Leave Mission</Button>}
+                <div>
+                  <Button variant="outline-info" className={style.rocketBtn}><a className={style.link} target="_blank" rel="noopener noreferrer" href={mission.wikiLink}>More Info</a></Button>
+                  <Button variant="outline-secondary" className={style.rocketBtn} onClick={() => { dispatch(unreserveMission(mission.id)); }}>Leave Mission</Button>
+                </div>
               </li>
             ))}
+
           </ul>
         </div>
         <div className={style.rocketsDiv}>
@@ -40,8 +43,10 @@ const MyProfile = () => {
               filtered.map((rocket) => (
                 <li className={style.li} key={rocket.id}>
                   <h3 className={style.rocketName}>{rocket.name}</h3>
-                  { rocket.reserved
-                  && <Button variant="outline-secondary" className={style.rocketBtn} onClick={() => { dispatch(unbookRocket(rocket.id)); }}>Cancel reservation</Button>}
+                  <div>
+                    <Button variant="outline-info" className={style.rocketBtn}><a className={style.link} target="_blank" rel="noopener noreferrer" href={rocket.wikiLink}>More Info</a></Button>
+                    <Button variant="outline-secondary" className={style.rocketBtn} onClick={() => { dispatch(unbookRocket(rocket.id)); }}>Cancel reservation</Button>
+                  </div>
                 </li>
               ))
             }
