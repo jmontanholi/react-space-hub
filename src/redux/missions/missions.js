@@ -16,6 +16,7 @@ const populateMissions = (data) => {
       id: data[i].mission_id,
       name: data[i].mission_name,
       description: data[i].description,
+      wikiLink: data[i].wikipedia,
       reserved: false,
     });
   }
