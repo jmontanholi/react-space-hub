@@ -50,10 +50,6 @@
   padding: 0;
 }
 
-.rocketBtn:hover > .link {
-  color: rgb(255, 254, 241);
-}
-
 .link {
   color: #0dcaf0;
   text-decoration: none;
@@ -63,4 +59,8 @@
 
 .link:hover {
   color: rgb(238, 238, 238);
+}
+
+.rocketBtn:hover > .link {
+  color: rgb(255, 254, 241);
 }
