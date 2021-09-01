@@ -27,6 +27,7 @@ const populateRockets = (data) => {
       name: data[i].rocket_name,
       type: data[i].rocket_type,
       description: data[i].description,
+      wikiLink: data[i].wikipedia,
       flickr_images: data[i].flickr_images,
     });
   }
