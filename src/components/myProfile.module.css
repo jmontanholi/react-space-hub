@@ -47,7 +47,6 @@
 
 .rocketBtn {
   margin-right: 2rem;
-  padding: 0;
 }
 
 .link {
@@ -63,4 +62,9 @@
 
 .rocketBtn:hover > .link {
   color: rgb(255, 254, 241);
+}
+
+.msg {
+  text-align: center;
+  font-size: 1.5rem;
 }
